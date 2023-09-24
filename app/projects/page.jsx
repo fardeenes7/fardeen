@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import { Navigation } from "../components/nav";
@@ -69,8 +70,6 @@ export default async function ProjectsPage() {
                 new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
                 new Date(a.date ?? Number.POSITIVE_INFINITY).getTime()
         );
-
-    // const sorted = allProjects;
 
     return (
         <div className="relative pb-16">
