@@ -85,7 +85,7 @@ export const Article = ({ block }) => {
             <div>
                 <pre>
                     {block.code.rich_text.map((text, idx) => {
-                        return <code>{text.text.content}</code>;
+                        return <code key={idx}>{text.text.content}</code>;
                     })}
                 </pre>
             </div>
