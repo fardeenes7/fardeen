@@ -3,7 +3,6 @@ import React from "react";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 import { Article } from "./article";
-import { Eye } from "lucide-react";
 
 async function getData() {
     const url =
@@ -34,21 +33,8 @@ async function getData() {
     return data;
 }
 
-// const redis = Redis.fromEnv();
-
 export const revalidate = 60;
 export default async function ProjectsPage() {
-    // const views = (
-    //     await redis.mget(
-    //         ...allProjects.map((p) =>
-    //             ["pageviews", "projects", p.slug].join(":")
-    //         )
-    //     )
-    // ).reduce((acc, v, i) => {
-    //     acc[allProjects[i].slug] = v ?? 0;
-    //     return acc;
-    // }, {});
-
     const data = await getData();
     const allProjects = data.results;
     const featured = allProjects.find(
