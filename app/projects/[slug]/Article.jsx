@@ -101,5 +101,5 @@ export const Article = ({ block }) => {
 };
 
 const Image = ({ block, src }) => {
-    return <img className="rounded-xl" src={src} alt="" />;
+    return <img className="rounded-xl" src={src} alt="image" />;
 };
