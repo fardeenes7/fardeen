@@ -34,16 +34,17 @@ async function getPage(slug) {
         }),
     });
     const data = await res.json();
+    console.log(data.results[0].id);
     return {
         id: data.results[0].id,
         title: data.results[0].properties.Title.title[0].plain_text,
         date: data.results[0].properties.Date.date.start,
         description:
             data.results[0].properties.Description.rich_text[0].plain_text,
-        github: data.results[0].properties.Github
+        github: data.results[0].properties.Github.rich_text[0]
             ? data.results[0].properties.Github.rich_text[0].href
             : "https://github.com/fardeenes7",
-        live: data.results[0].properties.Live
+        live: data.results[0].properties.Live.rich_text[0]
             ? data.results[0].properties.Live.rich_text[0].href
             : undefined,
     };
