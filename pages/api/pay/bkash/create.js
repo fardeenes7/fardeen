@@ -21,16 +21,15 @@ export default async function handler(req, res) {
         },
         body: JSON.stringify({
             mode: "0011",
-            payerReference: "01619777283",
-            callbackURL: process.env.NEXT_PUBLIC_HOST + "/pay/result/",
-            amount: "1",
+            payerReference: req.body.payerReference,
+            callbackURL: process.env.NEXT_PUBLIC_HOST + "/pay/callback/",
+            amount: req.body.amount,
             currency: "BDT",
             intent: "sale",
             merchantInvoiceNumber: merchantInvoiceNumber,
         }),
     });
     const data = await response.json();
-    console.log(data);
     res.status(200).json({
         data: data,
         token: token,

@@ -1,5 +1,5 @@
 "use client";
-import { ArrowLeft, Eye, Github, Twitter } from "lucide-react";
+import { ArrowLeft, Eye, Github, Twitter, ChevronLeft } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -85,13 +85,14 @@ export const Header = ({ project, views }) => {
 
                     <Link
                         href="/projects"
-                        className={`duration-200 hover:font-medium ${
+                        className={`duration-200 font-display text-2xl flex gap-2 items-center ${
                             isIntersecting
-                                ? " text-zinc-400 hover:text-zinc-100"
-                                : "text-zinc-600 hover:text-zinc-900"
-                        } `}
+                                ? "text-zinc-300 hover:text-zinc-400"
+                                : "text-zinc-900 hover:text-zinc-700"
+                        }`}
                     >
-                        <ArrowLeft className="w-6 h-6 " />
+                        <ChevronLeft className="w-6 h-6 " />
+                        projects
                     </Link>
                 </div>
             </div>

@@ -1,10 +1,11 @@
 import "./global.css";
 import "./loading.css";
-
+import Head from "next/head";
 import { Inter } from "next/font/google";
 import LocalFont from "next/font/local";
 
 export const metadata = {
+    metadataBase: process.env.NEXT_PUBLIC_HOST,
     title: {
         default: "Fardeen Ehsan",
         template: "%s | Fardeen Ehsan",
@@ -13,8 +14,8 @@ export const metadata = {
     openGraph: {
         title: "Fardeen Ehsan",
         description: "Software engineer",
-        url: "https://fardeen.app",
-        siteName: "fardeen.app",
+        url: "https://fardeenes.com",
+        siteName: "Fardeen Ehsan",
         images: [
             {
                 url: "https://raw.githubusercontent.com/fardeenes7/fardeenes7/728cc75d59f8c271858828745d28cda24f13fbec/og.png",
@@ -60,7 +61,12 @@ const calSans = LocalFont({
 export default function RootLayout({ children }) {
     return (
         <html lang="en" className={`${inter.variable} ${calSans.variable}`}>
-            <head></head>
+            <Head>
+                <link
+                    rel="stylesheet"
+                    href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css"
+                ></link>
+            </Head>
             <body
                 className={`bg-white ${
                     process.env.NODE_ENV === "development"
