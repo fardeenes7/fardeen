@@ -4,11 +4,22 @@ import { Header } from "./header";
 import { ReportView } from "./view";
 import { Article } from "./Article";
 
-const Delay = () => {
-    setTimeout(() => {
-        console.log("hello");
-    }, 4000);
-};
+export async function generateMetadata({ params, searchParams }, parent) {
+    const slug = params?.slug;
+
+    // fetch data
+    const project = await getData(slug);
+
+    // optionally access and extend (rather than replace) parent metadata
+    const previousImages = (await parent).openGraph?.images || [];
+
+    return {
+        title: project.title,
+        openGraph: {
+            images: ["/api/og?type=project&title=" + project.title],
+        },
+    };
+}
 
 async function getPage(slug) {
     const url =
@@ -79,7 +90,6 @@ async function getData(slug) {
 }
 
 export default async function PostPage({ params }) {
-    Delay();
     const slug = params?.slug;
     const project = await getData(slug);
 

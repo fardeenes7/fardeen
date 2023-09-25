@@ -1,6 +1,5 @@
 import "./global.css";
 import "./loading.css";
-import Head from "next/head";
 import { Inter } from "next/font/google";
 import LocalFont from "next/font/local";
 
@@ -18,7 +17,7 @@ export const metadata = {
         siteName: "Fardeen Ehsan",
         images: [
             {
-                url: "https://raw.githubusercontent.com/fardeenes7/fardeenes7/728cc75d59f8c271858828745d28cda24f13fbec/og.png",
+                url: "/api/og",
                 width: 1920,
                 height: 1080,
             },
@@ -61,12 +60,6 @@ const calSans = LocalFont({
 export default function RootLayout({ children }) {
     return (
         <html lang="en" className={`${inter.variable} ${calSans.variable}`}>
-            <Head>
-                <link
-                    rel="stylesheet"
-                    href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css"
-                ></link>
-            </Head>
             <body
                 className={`bg-white ${
                     process.env.NODE_ENV === "development"
