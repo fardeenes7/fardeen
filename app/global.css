@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    .text-edge-outline {
+        -webkit-text-stroke: 1px rgba(0, 0, 0, 0.3);
+    }
+}
+
 :root {
     --text: #2b3044;
     --line: #bbc1e1;
