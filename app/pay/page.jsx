@@ -124,7 +124,7 @@ export default function PayPage() {
                                             autoComplete="email"
                                             placeholder="you@gmail.com"
                                             onChange={(e) => handleChange(e)}
-                                            className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-slate-500 focus:border-slate-500 sm:text-sm"
+                                            className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
                                         />
                                     </div>
                                 </div>
@@ -144,7 +144,7 @@ export default function PayPage() {
                                             placeholder="John Doe"
                                             onChange={(e) => handleChange(e)}
                                             required
-                                            className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-slate-500 focus:border-slate-500 sm:text-sm"
+                                            className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
                                         />
                                     </div>
                                 </div>
@@ -163,7 +163,7 @@ export default function PayPage() {
                                             id="paymentfor"
                                             placeholder="Project/Personal"
                                             onChange={(e) => handleChange(e)}
-                                            className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-slate-500 focus:border-slate-500 sm:text-sm"
+                                            className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
                                         />
                                     </div>
                                 </div>
@@ -186,7 +186,7 @@ export default function PayPage() {
                                             title="Amount should be between 1 and 25000"
                                             onChange={(e) => handleChange(e)}
                                             required
-                                            className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-slate-500 focus:border-slate-500 sm:text-sm"
+                                            className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
                                         />
                                     </div>
                                 </div>
@@ -215,7 +215,7 @@ export default function PayPage() {
                                                             ? "border-transparent"
                                                             : "border-gray-300",
                                                         active
-                                                            ? "ring-2 ring-slate-500"
+                                                            ? "ring-2 ring-emerald-500"
                                                             : "",
                                                         "relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none"
                                                     )
@@ -248,7 +248,7 @@ export default function PayPage() {
                                                         </div>
                                                         {checked ? (
                                                             <CheckCircleIcon
-                                                                className="h-5 w-5 text-slate-600"
+                                                                className="h-5 w-5 text-emerald-600"
                                                                 aria-hidden="true"
                                                             />
                                                         ) : null}
@@ -258,7 +258,7 @@ export default function PayPage() {
                                                                     ? "border"
                                                                     : "border-2",
                                                                 checked
-                                                                    ? "border-slate-500"
+                                                                    ? "border-emerald-500"
                                                                     : "border-transparent",
                                                                 "absolute -inset-px rounded-lg pointer-events-none"
                                                             )}
@@ -275,7 +275,7 @@ export default function PayPage() {
 
                         {/* Order summary */}
                         <div className="mt-10 lg:mt-0">
-                            <div className="mt-4 bg-slate-100 border border-gray-200 rounded-lg shadow-sm">
+                            <div className="mt-4 bg-emerald-50 border border-gray-200 rounded-lg shadow-sm">
                                 <h2 className="p-8 text-xl font-display text-gray-900">
                                     Payment summary
                                 </h2>
@@ -308,7 +308,7 @@ export default function PayPage() {
                                     <button
                                         type="submit"
                                         id="paymentButton"
-                                        className="w-full flex items-center justify-center gap-2 bg-slate-600 border border-transparent rounded-md shadow-sm py-3 px-4 text-sm font-bold text-white hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-slate-500"
+                                        className="w-full flex items-center justify-center gap-2 bg-emerald-600 border border-transparent rounded-md shadow-sm py-3 px-4 text-sm font-bold text-white hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-emerald-500"
                                     >
                                         {loading && (
                                             <svg
