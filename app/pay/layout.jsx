@@ -1,14 +1,14 @@
 export const metadata = {
     metadataBase: process.env.NEXT_PUBLIC_HOST,
-    title: "Blog",
+    title: "Payment",
     openGraph: {
-        title: "Blog | Fardeen Ehsan",
-        description: "Blog by Fardeen Ehsan",
+        title: "Payment | Fardeen Ehsan",
+        description: "Pay to Fardeen Ehsan",
         url: "https://fardeenes.com",
         siteName: "Fardeen Ehsan",
         images: [
             {
-                url: "/api/og?type=page&title=Blog",
+                url: "/api/og?type=page&title=Payment",
                 width: 1920,
                 height: 1080,
             },
@@ -22,6 +22,6 @@ export const metadata = {
     },
 };
 
-export default function BlogLayout({ children }) {
-    return <div className="relative min-h-screen  ">{children}</div>;
+export default function PaymentLayout({ children }) {
+    return <div>{children}</div>;
 }
