@@ -1,13 +1,33 @@
+import { ExternalLink } from "lucide-react";
 export const Article = ({ block }) => {
     if (block.type === "paragraph") {
         return (
             <p>
                 {block.paragraph.rich_text.map((text, idx) => {
-                    return (
-                        <span
-                            className={`${
-                                text.annotations.bold === true && "font-bold"
-                            }
+                    if (text.href != null) {
+                        return (
+                            <a
+                                className="link-animate"
+                                href={text.href}
+                                target="_blank"
+                                key={idx}
+                            >
+                                <span className="flex items-center gap-1">
+                                    {text.text.content}{" "}
+                                    <ExternalLink size={14} />
+                                </span>
+                                <svg className="underline" viewBox="0 0 70 36">
+                                    <path d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527" />
+                                </svg>
+                            </a>
+                        );
+                    } else {
+                        return (
+                            <span
+                                className={`${
+                                    text.annotations.bold === true &&
+                                    "font-bold"
+                                }
                             ${
                                 text.annotations.underline === true &&
                                 "underline"
@@ -19,11 +39,12 @@ export const Article = ({ block }) => {
                             }
                             text-${text.annotations.color}-700
                             `}
-                            key={idx}
-                        >
-                            {text.text.content}
-                        </span>
-                    );
+                                key={idx}
+                            >
+                                {text.text.content}
+                            </span>
+                        );
+                    }
                 })}
             </p>
         );

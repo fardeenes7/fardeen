@@ -26,24 +26,30 @@ export const Navigation = () => {
                         : "bg-zinc-900/500  border-zinc-800 "
                 }`}
             >
-                <div className="container flex flex-row-reverse items-center justify-between p-6 mx-auto">
+                <div className="max-w-7xl w-full text-sm font-bold container flex flex-row-reverse items-center px-6 justify-between mx-auto">
                     <div className="flex justify-between gap-8">
                         <Link
                             href="/projects"
-                            className="duration-200 text-zinc-700 hover:text-zinc-600"
+                            className="duration-200 text-zinc-700 hover:text-zinc-600  px-2 py-6 link-underline"
                         >
                             Projects
                         </Link>
                         <Link
                             href="/blog"
-                            className="duration-200 text-zinc-700 hover:text-zinc-600"
+                            className="duration-200 text-zinc-700 hover:text-zinc-600 px-2 py-6 link-underline"
                         >
                             Blog
+                        </Link>
+                        <Link
+                            href="/pay"
+                            className="duration-200 text-zinc-700 hover:text-zinc-600 px-2 py-6 link-underline"
+                        >
+                            Payment
                         </Link>
 
                         <Link
                             href="/contact"
-                            className="duration-200 text-zinc-700 hover:text-zinc-600"
+                            className="duration-200 text-zinc-700 hover:text-zinc-600 px-2 py-6 link-underline"
                         >
                             Contact
                         </Link>
@@ -52,8 +58,13 @@ export const Navigation = () => {
                     <Link
                         href="/"
                         className="duration-200 text-zinc-900 hover:text-zinc-700"
+                    ></Link>
+
+                    <Link
+                        href="/"
+                        className="duration-200 text-zinc-900 hover:text-zinc-700 font-display text-3xl"
                     >
-                        <ArrowLeft className="w-6 h-6 " />
+                        fardeen.
                     </Link>
                 </div>
             </div>

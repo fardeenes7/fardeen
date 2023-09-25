@@ -1,6 +1,7 @@
 "use client";
 import { set } from "date-fns";
 import { useState, useEffect } from "react";
+import Loading from "@/app/components/loading";
 
 const executePayment = async (paymentID, id_token) => {
     const res = await fetch("/api/pay/bkash/execute", {
@@ -31,14 +32,49 @@ export default function DonePayment() {
             setStatus(
                 new URLSearchParams(window.location.search).get("status")
             );
-            console.log(paymentData);
+            setLoading(false);
         };
         fetchPayment();
     }, []);
 
     return (
         <div className="flex flex-col w-full min-h-screen justify-center items-center">
-            <p>Payment {status}</p>
+            {loading ? <Loader /> : <StatusPage status={status} />}
+        </div>
+    );
+}
+
+function StatusPage({ status }) {
+    if (status === "success") {
+        return <Success />;
+    } else if (status === "fail") {
+        return <Fail />;
+    } else {
+        return <Loader />;
+    }
+}
+
+function Loader() {
+    return (
+        <div className="w-full flex flex-col justify-center items-center gap-8">
+            <Loading />
+            <h2 className="text-2xl font-display">Processing Payment</h2>
+        </div>
+    );
+}
+
+function Success() {
+    return (
+        <div className="w-full flex flex-col justify-center items-center gap-8">
+            <h2 className="text-2xl font-display">Payment Successful</h2>
+        </div>
+    );
+}
+
+function Fail() {
+    return (
+        <div className="w-full flex flex-col justify-center items-center gap-8">
+            <h2 className="text-2xl font-display">Payment Failed</h2>
         </div>
     );
 }

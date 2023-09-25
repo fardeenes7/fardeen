@@ -4,6 +4,12 @@ import { Header } from "./header";
 import { ReportView } from "./view";
 import { Article } from "./Article";
 
+const Delay = () => {
+    setTimeout(() => {
+        console.log("hello");
+    }, 4000);
+};
+
 async function getPage(slug) {
     const url =
         "https://api.notion.com/v1/databases/fef61c124cbb40c39b4755c10f401101/query";
@@ -32,9 +38,9 @@ async function getPage(slug) {
                 ],
             },
         }),
+        cache: "no-store",
     });
     const data = await res.json();
-    console.log(data.results[0].id);
     return {
         id: data.results[0].id,
         title: data.results[0].properties.Title.title[0].plain_text,
@@ -52,7 +58,6 @@ async function getPage(slug) {
 
 async function getData(slug) {
     const page = await getPage(slug);
-    console.log(page);
     const url = "https://api.notion.com/v1/blocks/" + page.id + "/children";
     const res = await fetch(url, {
         method: "GET",
@@ -74,6 +79,7 @@ async function getData(slug) {
 }
 
 export default async function PostPage({ params }) {
+    Delay();
     const slug = params?.slug;
     const project = await getData(slug);
 

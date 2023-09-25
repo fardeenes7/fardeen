@@ -1,4 +1,6 @@
-import "../global.css";
+import "./global.css";
+import "./loading.css";
+
 import { Inter } from "next/font/google";
 import LocalFont from "next/font/local";
 
@@ -54,8 +56,6 @@ const calSans = LocalFont({
     display: "swap",
     variable: "--font-calsans",
 });
-
-//${inter.variable} ${calSans.variable}
 
 export default function RootLayout({ children }) {
     return (
