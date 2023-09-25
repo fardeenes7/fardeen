@@ -22,7 +22,7 @@ export default async function handler(req, res) {
         body: JSON.stringify({
             mode: "0011",
             payerReference: "01619777283",
-            callbackURL: "http://localhost:3000/pay/result/",
+            callbackURL: process.env.NEXT_PUBLIC_HOST + "/pay/result/",
             amount: "1",
             currency: "BDT",
             intent: "sale",
