@@ -25,6 +25,11 @@ export default async function handler(req) {
             ? searchParams.get("title")
             : "Fardeen";
         return og(project(title));
+    } else if (type == "test") {
+        const title = searchParams.get("title")
+            ? searchParams.get("title")
+            : "Fardeen";
+        return og(test(title));
     }
 }
 
@@ -32,16 +37,18 @@ function base() {
     return (
         <div
             style={{
-                backgroundColor: "black",
+                backgroundColor: "white",
+                backgroundImage:
+                    "linear-gradient(to top left , #ffffff, rgb(52, 211, 153, 0.3), #ffffff)",
                 height: "100%",
                 width: "100%",
-                fontSize: 150,
+                fontSize: 180,
                 fontFamily: "CalSans-SemiBold",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
-                color: "white",
+                color: "black",
             }}
         >
             Fardeen
@@ -53,7 +60,9 @@ function page(title) {
     return (
         <div
             style={{
-                backgroundColor: "black",
+                backgroundColor: "white",
+                backgroundImage:
+                    "linear-gradient(to top left , #ffffff, rgb(52, 211, 153, 0.3), #ffffff)",
                 height: "100%",
                 width: "100%",
                 fontSize: 150,
@@ -62,7 +71,7 @@ function page(title) {
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
-                color: "white",
+                color: "black",
             }}
         >
             <div
@@ -74,9 +83,7 @@ function page(title) {
                 }}
             >
                 <div>{title}</div>
-                <div style={{ fontSize: 50 }}>
-                    {process.env.NEXT_PUBLIC_HOST}
-                </div>
+                <div style={{ fontSize: 50 }}>Fardeen Ehsan</div>
             </div>
         </div>
     );
@@ -86,7 +93,9 @@ function project(title) {
     return (
         <div
             style={{
-                backgroundColor: "black",
+                backgroundColor: "white",
+                backgroundImage:
+                    "linear-gradient(to top left , #ffffff, rgb(52, 211, 153, 0.3), #ffffff)",
                 height: "100%",
                 width: "100%",
                 fontSize: 90,
@@ -95,15 +104,15 @@ function project(title) {
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
-                color: "white",
+                color: "black",
             }}
         >
             <div
                 style={{
                     display: "flex",
                     flexDirection: "column",
-                    justifyContent: "flex-start",
-                    alignItems: "flex-start",
+                    justifyContent: "flex-end",
+                    alignItems: "flex-end",
                     width: "75%",
                 }}
             >
@@ -114,7 +123,48 @@ function project(title) {
                         marginTop: "20px",
                     }}
                 >
-                    {process.env.NEXT_PUBLIC_HOST + "/projects"}
+                    Fardeen Ehsan
+                </div>
+            </div>
+        </div>
+    );
+}
+function test(title) {
+    return (
+        <div
+            style={{
+                backgroundColor: "white",
+                backgroundImage:
+                    "linear-gradient(to top left , #ffffff, rgb(52, 211, 153, 0.3), #ffffff)",
+                height: "100%",
+                width: "100%",
+                fontSize: 180,
+                fontFamily: "CalSans-SemiBold",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                color: "black",
+            }}
+        >
+            <div
+                style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "flex-end",
+                    alignItems: "flex-end",
+                }}
+            >
+                <div>{title}</div>
+                <div
+                    style={{
+                        fontSize: 40,
+                        marginTop: "20px",
+                        display: "flex",
+                        justifyContent: "flex-end",
+                    }}
+                >
+                    Fardeen Ehsan
                 </div>
             </div>
         </div>
