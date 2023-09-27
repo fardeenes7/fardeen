@@ -1,5 +1,4 @@
 "use client";
-import bKashLogo from "@/public/images/bkash.png";
 import { Navigation } from "../components/nav";
 import { Fragment, useState } from "react";
 import {
@@ -87,7 +86,7 @@ export default function PayPage() {
     return (
         <div className="h-screen">
             <Navigation />
-            <div className="px-6 pt-16 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-8 md:pt-24 lg:pt-32">
+            <div className="px-6  mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-8 pt-24 lg:pt-32">
                 <div className="max-w-2xl mx-auto lg:mx-0">
                     <h2 className="font-display text-2xl font-bold tracking-tight text-zinc-800 sm:text-4xl">
                         Make Payment
@@ -101,15 +100,15 @@ export default function PayPage() {
 
                     <form
                         onSubmit={(e) => handleFormSubmit(e)}
-                        className="lg:grid lg:grid-cols-2 lg:gap-x-12 xl:gap-x-16"
+                        className=" lg:gap-x-12 xl:gap-x-16 grid lg:grid-cols-2"
                         method="POST"
                     >
                         <div>
                             <h2 className="text-lg font-medium text-gray-900">
                                 Contact information
                             </h2>
-                            <div className="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
-                                <div className="mt-4 col-span-2">
+                            <div className="mt-4 grid gap-y-6  sm:gap-x-4">
+                                <div className="mt-4 ">
                                     <label
                                         htmlFor="email"
                                         className="block text-sm font-medium text-gray-700"

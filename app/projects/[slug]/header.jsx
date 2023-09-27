@@ -33,7 +33,7 @@ export const Header = ({ project, views }) => {
     return (
         <header
             ref={ref}
-            className="relative isolate overflow-hidden bg-gradient-to-tl from-black via-zinc-900 to-black"
+            className="pt-6 sm:pt-0 relative isolate overflow-hidden bg-gradient-to-tl from-black via-zinc-900 to-black"
         >
             <div
                 className={`fixed inset-x-0 top-0 z-50 backdrop-blur lg:backdrop-blur-none duration-200 border-b lg:bg-transparent ${

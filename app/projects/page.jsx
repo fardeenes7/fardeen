@@ -73,7 +73,7 @@ export default async function ProjectsPage() {
     return (
         <div className="relative pb-16">
             <Navigation />
-            <div className="px-6 pt-16 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
+            <div className="px-6 pt-24 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16  lg:pt-32">
                 <div className="max-w-2xl mx-auto lg:mx-0">
                     <h2 className="text-3xl font-bold font-display tracking-tight text-zinc-800 sm:text-4xl">
                         Projects
@@ -89,6 +89,7 @@ export default async function ProjectsPage() {
                     <Card>
                         <Link
                             href={`/projects/${featured.properties.Slug.rich_text[0].plain_text}`}
+                            className="articleCard"
                         >
                             <article className="relative w-full h-full p-4 md:p-8">
                                 <div className="flex items-center justify-between gap-2">
@@ -116,15 +117,15 @@ export default async function ProjectsPage() {
                                     </div>
                                 </div>
 
-                                <h2
+                                <span
                                     id="featured-post"
-                                    className="mt-4 text-3xl font-bold text-zinc-800 group-hover:text-black sm:text-4xl font-display"
+                                    className="mt-4 text-3xl font-bold text-zinc-800 group-hover:text-black sm:text-4xl font-display link-underline"
                                 >
                                     {
                                         featured.properties.Title.title[0]
                                             .plain_text
                                     }
-                                </h2>
+                                </span>
                                 <p className="mt-4 leading-8 duration-150 text-zinc-700 group-hover:text-zinc-800">
                                     {featured.properties.Description
                                         .rich_text[0]
