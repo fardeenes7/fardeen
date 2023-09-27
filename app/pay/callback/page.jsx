@@ -108,7 +108,7 @@ function CoudntLoad() {
             </div>
             <div>
                 <p className="mt-16 text-center text-zinc-700">
-                    Couldn't load payment information.
+                    Couldn&#39;t load payment information.
                 </p>
             </div>
         </div>
