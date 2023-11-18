@@ -2,6 +2,7 @@ import "./global.css";
 import "./loading.css";
 import { Inter } from "next/font/google";
 import LocalFont from "next/font/local";
+import Favicon from "@/public/favicon.ico";
 
 export const metadata = {
     metadataBase: process.env.NEXT_PUBLIC_HOST,
@@ -41,7 +42,7 @@ export const metadata = {
         card: "summary_large_image",
     },
     icons: {
-        shortcut: "/favicon.png",
+        shortcut: Favicon.src,
     },
 };
 

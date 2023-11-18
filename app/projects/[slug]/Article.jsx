@@ -114,9 +114,21 @@ export const Article = ({ block }) => {
     }
     if (block.type === "image") {
         if (block.image.type === "external") {
-            return <Image block={block} src={block.image.external.url} />;
+            return (
+                <Image
+                    block={block}
+                    src={block.image.external.url}
+                    alt="External Image"
+                />
+            );
         } else if (block.image.type === "file") {
-            return <Image block={block} src={block.image.file.url} />;
+            return (
+                <Image
+                    block={block}
+                    src={block.image.file.url}
+                    alt="External Image"
+                />
+            );
         }
     }
 };

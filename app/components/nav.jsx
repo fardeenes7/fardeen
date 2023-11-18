@@ -58,7 +58,7 @@ export const Navigation = () => {
                                 key={item.href}
                                 href={item.href}
                                 onMouseEnter={() => setSelected(item)}
-                                className="relative duration-200 text-zinc-700 hover:text-zinc-500 px-4 py-6 link-underline"
+                                className="relative duration-200 text-zinc-700 hover:text-zinc-500 px-4 py-6 "
                             >
                                 <span className="relative z-10 font-display">
                                     {item.name}
