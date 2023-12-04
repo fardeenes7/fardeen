@@ -1,11 +1,11 @@
-import "./global.css";
-import "./loading.css";
+import "@/public/css/global.css";
+import "@/public/css/loading.css";
 import { Inter } from "next/font/google";
 import LocalFont from "next/font/local";
-import Favicon from "@/public/favicon.ico";
+import { ThemeProvider } from "@/app/components/theme-provider";
 
 export const metadata = {
-    metadataBase: process.env.NEXT_PUBLIC_HOST,
+    metadataBase: "https://fardiin.com",
     title: {
         default: "Fardeen Ehsan",
         template: "%s | Fardeen Ehsan",
@@ -14,7 +14,7 @@ export const metadata = {
     openGraph: {
         title: "Fardeen Ehsan",
         description: "Software engineer",
-        url: "https://fardeenes.com",
+        url: "https://fardiin.com",
         siteName: "Fardeen Ehsan",
         images: [
             {
@@ -42,7 +42,7 @@ export const metadata = {
         card: "summary_large_image",
     },
     icons: {
-        shortcut: Favicon.src,
+        shortcut: "/favicon.ico",
     },
 };
 
@@ -62,13 +62,20 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en" className={`${inter.variable} ${calSans.variable}`}>
             <body
-                className={`bg-white ${
+                className={`bg-white dark:bg-black ${
                     process.env.NODE_ENV === "development"
                         ? "debug-screens"
                         : undefined
                 }`}
             >
-                {children}
+                {" "}
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="system"
+                    enableSystem
+                >
+                    {children}
+                </ThemeProvider>
             </body>
         </html>
     );

@@ -119,6 +119,16 @@ export const Header = ({ project, views }) => {
                                     <span aria-hidden="true">&rarr;</span>
                                 </Link>
                             ))}
+                            <Link target="_blank" href={project.github}>
+                                Github
+                                <span aria-hidden="true"> &rarr;</span>
+                            </Link>
+                            {project.live && (
+                                <Link target="_blank" href={project.live}>
+                                    Live Demo
+                                    <span aria-hidden="true"> &rarr;</span>
+                                </Link>
+                            )}
                         </div>
                     </div>
                 </div>

@@ -3,6 +3,7 @@ import { BarChart, Menu } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { easeInOut, motion } from "framer-motion";
+import { ModeToggle } from "@/app/components/mode-toggle";
 
 const items = [
     {
@@ -65,6 +66,9 @@ export const Navigation = () => {
                                 </span>
                             </Link>
                         ))}
+                        <div className="my-auto">
+                            <ModeToggle />
+                        </div>
                     </div>
                     <button
                         type="button"

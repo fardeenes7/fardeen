@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Particles from "./components/particles";
+import { ModeToggle } from "./components/mode-toggle";
 
 const navigation = [
     { name: "Projects", href: "/projects" },
@@ -12,8 +13,9 @@ const navigation = [
 export default function Home() {
     return (
         <div
-            className={`flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-white via-emerald-400/30 to-white`}
+            className={`relative flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-white via-emerald-400/30 to-white`}
         >
+            <div className="absolute bottom-20 right-20"></div>
             <nav className="my-16 animate-fade-in">
                 <ul className="flex items-center justify-center gap-4">
                     {navigation.map((item) => (
@@ -25,6 +27,7 @@ export default function Home() {
                             {item.name}
                         </Link>
                     ))}
+                    <ModeToggle />
                 </ul>
             </nav>
             <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-700/0 via-zinc-700/50 to-zinc-300/0" />
@@ -43,7 +46,7 @@ export default function Home() {
                     buuilding resources at{" "}
                     <Link
                         target="_blank"
-                        href="https://unidemy.fardiin.com/"
+                        href="https://unidemy.tech/"
                         className="underline duration-500 hover:text-zinc-300"
                     >
                         Unidemy
