@@ -3,6 +3,7 @@ import "@/public/css/loading.css";
 import { Inter } from "next/font/google";
 import LocalFont from "next/font/local";
 import { ThemeProvider } from "@/app/components/theme-provider";
+import TopLoadingBar from "@/app/components/toploadingbar";
 
 export const metadata = {
     metadataBase: "https://fardiin.com",
@@ -69,13 +70,15 @@ export default function RootLayout({ children }) {
                 }`}
             >
                 {" "}
-                <ThemeProvider
-                    attribute="class"
-                    defaultTheme="system"
-                    enableSystem
-                >
-                    {children}
-                </ThemeProvider>
+                <TopLoadingBar>
+                    <ThemeProvider
+                        attribute="class"
+                        defaultTheme="system"
+                        enableSystem
+                    >
+                        {children}
+                    </ThemeProvider>
+                </TopLoadingBar>
             </body>
         </html>
     );
