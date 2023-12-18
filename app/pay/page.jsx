@@ -9,6 +9,7 @@ import {
     Transition,
 } from "@headlessui/react";
 import { CheckIcon, TrashIcon, CheckCircleIcon } from "lucide-react";
+import Image from "next/image";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
@@ -228,7 +229,7 @@ export default function PayPage() {
                                                                     as="span"
                                                                     className="h-6 w-6 text-sm font-medium text-gray-900"
                                                                 >
-                                                                    <img
+                                                                    <Image
                                                                         src={
                                                                             paymentMethod.logo
                                                                         }
