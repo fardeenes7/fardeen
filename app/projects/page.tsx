@@ -52,7 +52,8 @@ export default async function ProjectsPage() {
                     </h2>
                     <p className="mt-4 text-zinc-700">
                         Some of the projects are from work and some are on my
-                        own time.
+                        own time. "🔨" Marks ongoing projects and/or
+                        subprojects.
                     </p>
                 </div>
                 <div className="w-full h-px bg-zinc-800" />

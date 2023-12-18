@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Loading from "@/app/components/loading";
 import { Navigation } from "@/app/components/nav";
 import bkashlogo from "@/public/images/bkash.png";
+import Image from "next/image";
 
 const executePayment = async (paymentID, id_token) => {
     const res = await fetch("/api/pay/bkash/execute", {
@@ -168,7 +169,7 @@ function Success({ data }) {
                             <div className="mt-3">
                                 <dd className="-ml-4 -mt-4 flex flex-wrap">
                                     <div className="ml-4 mt-4 flex-shrink-0">
-                                        <img
+                                        <Image
                                             src={bkashlogo.src}
                                             className="w-9"
                                             alt=""

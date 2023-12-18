@@ -1,0 +1,94 @@
+---
+title: Eduscraper
+description: Education scraper for some Universities. Scrapes the course catalog and the schedule for all courses.
+date: "2023-12-02"
+url: https://eduscraper.fardiin.com/
+published: true
+repository: fardeenes7/eduscraper
+image: "/images/projects/eduscraper.png"
+---
+
+<a href="https://eduscraper.fardiin.com/" target="_blank">![](/images/projects/eduscraper.png)</a>
+# Eduscraper
+
+Education scraper for some Universities. Scrapes the course catalog and the schedule for all courses.
+
+## Universities
+
+### Supported Universities
+
+-   [x] <a href="https://www.utoronto.ca/" target="_blank">University of Toronto</a>
+-   [x] <a href="https://umanitoba.ca/" target="_blank">University of Manitoba</a>
+
+### TODO
+
+-   [ ] <a href="https://uwaterloo.ca/" target="_blank">University of Waterloo</a>
+-   [ ] <a href="https://www.ualberta.ca/index.html" target="_blank">University of Alberta</a>
+-   [ ] <a href="https://www.ucalgary.ca/" target="_blank">University of Calgary</a>
+
+
+## Features
+
+- Automatic course catalog scraping
+- Schedule retrieval for enrolled courses
+- User-friendly interface for managing scraped data
+- Customizable settings for scraping parameters
+
+## Tech Stack
+
+| Scraper | Server | Client | Database |
+| --- | --- | --- | -- |
+| Requests | Python | Django Templates | PostgreSQL |
+| Beautifulsoup4 | Django | Tailwind CSS | - |
+
+
+
+## Installation and Usage
+
+### Installation
+
+```py
+git clone https://github.com/fardeenes7/eduscraper.git
+cd eduscraper
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+```
+
+### Creating Database
+```py
+python manage.py makemigrations
+python manage.py migrate
+```
+
+### Create Superuser
+```
+python manage.py createsuperuser
+```
+
+### Run the server
+
+```py
+python manage.py runserver
+```
+
+### Run the scrapers
+- Head over to http://127.0.0.1:8000/admin/
+- Click on Run scraper for all the universities
+
+
+## License
+
+<a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank">GPL-3.0</a>
+
+## Contributing
+
+- Fork the repository
+- Create a new branch for your feature or bug fix: git checkout -b feature/new-feature
+- Commit your changes: git commit -m "Add new feature"
+- Push to the branch: git push origin feature/new-feature
+- Submit a pull request
+
+## Support
+<a href="https://www.buymeacoffee.com/fardeenes" target="_blank"><img src="/icons/bmc-button.svg" height="50"  width="150" alt="Buy Me A Coffee" /></a>
