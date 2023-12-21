@@ -1,165 +1,163 @@
 ---
 title: Pricee
-description: pricee is a ecommerce price tracker platform that leverages bulk web scraping to create a database of price differences of the same products in difference ecommerce platforms.
+description: Pricee is a bulk web scraping project that allows users to compare prices of products across multiple websites.
 repository: fardeenes7/pricee
 date: "2023-05-21"
 published: true
+image: '/images/projects/pricee/pricee.jpg'
 ---
+# Description
 
--   typesafe
--   handles building the url params for you
--   easy transformation of resulting data
--   built in cache directives for nextjs
--   built in retry logic for ratelimited requests
+Pricee is a web scraping project that allows users to compare prices of products across multiple websites. It is built with Django Rest Framework and uses web scraping techniques to collect data from various e-commerce websites.
 
-```ts
-import { Tinybird } from "@chronark/zod-bird";
-import { z } from "zod";
+# Tech Stack
 
-const tb = new Tinybird({ token: "token" });
+![Tech Stack](/images/projects/pricee/stack.png)
 
-export const getEvents = tb.buildPipe({
-    pipe: "get_events__v1",
-    parameters: z.object({
-        tenantId: z.string(),
-    }),
-    data: z.object({
-        event: z.string(),
-        time: z.number().transform((t) => new Date(t)),
-    }),
-});
+# Installation
 
-const res = await getEvents({ tenantId: "chronark" });
+1.  Clone the repository to your local machine:
 
-// res.data = {event: string, time: Date}[]
-```
+    ```bash
+    git clone https://github.com/fardeenes7/pricee.git
+    ```
 
-## Install
+2.  Create a virtual environment and activate it:
 
-```
-npm i @chronark/zod-bird
-```
+    
+    ```bash
+    python -m venv env
+    source env/bin/activate (Linux/Mac)
+    env\Scripts\activate (Windows)
+    ```
 
-## Ingesting Data
+3.  Install the required packages:
 
-```ts
-// lib/tinybird.ts
-import { Tinybird } from "./client";
-import { z } from "zod";
 
-const tb = new Tinybird({ token: process.env.TINYBIRD_TOKEN! });
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-export const publishEvent = tb.buildIngestEndpoint({
-    datasource: "events__v1",
-    event: z.object({
-        id: z.string(),
-        tenantId: z.string(),
-        channelId: z.string(),
-        time: z.number().int(),
-        event: z.string(),
-        content: z.string().optional().default(""),
-        metadata: z.string().optional().default(""),
-    }),
-});
-```
+4.  Run the migrations:
 
-```ts
-// somewhere.ts
-import { publishEvent } from "./lib/tinybird";
+    ```bash
+    python manage.py migrate
+    ```
 
-await publishEvent({
-    id: "1",
-    tenantId: "1",
-    channelId: "1",
-    time: Date.now(),
-    event: "test",
-    content: "test",
-    metadata: JSON.stringify({ test: "test" }),
-});
-```
+5.  Start the development server:
 
-## Querying Endpoints
+    ```bash
+    python manage.py runserver
+    ```
 
-```ts
-// lib/tinybird.ts
-import { Tinybird } from "./client";
-import { z } from "zod";
+6.  Use a REST client like [Postman](https://www.postman.com/downloads/) to interact with the Pricee API.
 
-const tb = new Tinybird({ token: process.env.TINYBIRD_TOKEN! });
+# Endpoints
 
-export const getChannelActivity = tb.buildPipe({
-    pipe: "get_channel_activity__v1",
-    parameters: z.object({
-        tenantId: z.string(),
-        channelId: z.string().optional(),
-        start: z.number(),
-        end: z.number().optional(),
-        granularity: z.enum(["1m", "1h", "1d", "1w", "1M"]),
-    }),
-    data: z.object({
-        time: z.string().transform((t) => new Date(t).getTime()),
-        count: z
-            .number()
-            .nullable()
-            .optional()
-            .transform((v) => (typeof v === "number" ? v : 0)),
-    }),
-});
-```
+The following API endpoints are available in Pricee:
 
-```ts
-// somewhere.ts
-import { getChannelActivity } from "./lib/tinybird";
+## Client API
 
-const res = await getChannelActivity({
-    tenantId: "1",
-    channelId: "1",
-    start: 123,
-    end: 1234,
-    granularity: "1h",
-});
-```
+## `/api/v2/refreshAllRecords/`
 
-`res` is the response from the tinybird endpoint, but now fully typed and the data has been parsed according to the schema defined in `data`.
+-   `GET`: Refresh all records in the database.
 
-## Advanced
+### `/api/v2/all/`
 
-### Caching
+-   `GET`: Get a list of all records in the database.
 
-You can add cache directives to each pipe.
+### `/api/v2/products/`
 
-#### Disable caching (useful in Next.js where everything is cached by default)
+-   `GET`: Get a list of all products.
 
-```ts
-tb.buildPipe({
-  pipe: "some_pipe__v1",
-  parameters: z.object({
-   hello: z.string()
-  }),
-  data: z.object({
-    response: z.string()
-  }),
-   opts: {
-      cache: "no-store" // <-------- Add this
-   };
-});
+### `/api/v2/products/all/`
 
-```
+-   `GET`: Get a paginated list of all products.
 
-#### Cache for 15 minutes
+### `/api/v2/products/all/<int:page>/`
 
-```ts
+-   `GET`: Get a specific page of paginated list of all products.
 
-tb.buildPipe({
-  pipe: "some_pipe__v1",
-  parameters: z.object({
-   hello: z.string()
-  }),
-  data: z.object({
-    response: z.string()
-  }),
-   opts: {
-      revalidate: 900 ;// <-------- Add this
-    };
-});
-```
+### `/api/v2/products/category/<str:category>/<int:page>/`
+
+-   `GET`: Get a specific page of paginated list of all products in a given category.
+
+### `/api/v2/products/subcategory/<str:subcategory>/<int:page>/`
+
+-   `GET`: Get a specific page of paginated list of all products in a given subcategory.
+
+### `/api/v2/products/<str:product_slug>/`
+
+-   `GET`: Get the details of a specific product with the given `product_slug`.
+
+### `/api/v2/products/record_view/<int:id>/`
+
+-   `POST`: Record a view of a specific product with the given `id`.
+
+### `/api/v2/categories/`
+
+-   `GET`: Get a list of all categories.
+
+### `/api/v2/subcategories/`
+
+-   `GET`: Get a list of all subcategories.
+
+### `/api/v2/navigation/`
+
+-   `GET`: Get a list of all categories and their subcategories for navigation.
+
+### `/api/v2/landing/`
+
+-   `GET`: Get a landing page with featured products.
+
+### `/api/v2/user/`
+
+-   Includes endpoints from the `user.urls` module.
+
+## Management API
+
+### `/api/manage/bannerads/`
+
+-   `GET`: Get a list of all banner ads.
+-   `POST`: Create a new banner ad.
+
+### `/api/manage/permission/`
+
+-   `GET`: Check if the user has admin permissions.
+
+### `/api/manage/products/`
+
+-   `GET`: Get a list of all products.
+
+### `/api/manage/users/`
+
+-   `GET`: Get a list of all users.
+-   `POST`: Create a new user.
+
+### `/api/manage/users/new/`
+
+-   `GET`: Get a form to create a new user.
+
+### `/api/manage/users/<int:pk>/`
+
+-   `GET`: Get the details of a specific user with the given primary key `pk`.
+
+### `/api/manage/users/<int:pk>/update/`
+
+-   `GET`: Get a form to update the details of a specific user with the given primary key `pk`.
+-   `POST`: Update the details of a specific user with the given primary key `pk`.
+
+### `/api/manage/users/<int:pk>/delete/`
+
+-   `GET`: Get a form to delete a specific user with the given primary key `pk`.
+-   `POST`: Delete a specific user with the given primary key `pk`.
+
+## Screenshots
+
+## Contributing
+
+If you would like to contribute to Pricee, please open a pull request or submit an issue on the GitHub repository.
+
+## License
+
+[GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html)
