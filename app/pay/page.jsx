@@ -20,7 +20,7 @@ const paymentMethods = [
         id: 1,
         title: "bKash",
         href: "bkash",
-        logo: "https://logos-download.com/wp-content/uploads/2022/01/BKash_Logo_icon.png",
+        logo: "/icons/bkash.png",
         charge: 1.5,
     },
 ];
@@ -234,6 +234,12 @@ export default function PayPage() {
                                                                             paymentMethod.logo
                                                                         }
                                                                         alt=""
+                                                                        width={
+                                                                            24
+                                                                        }
+                                                                        height={
+                                                                            24
+                                                                        }
                                                                     />
                                                                 </RadioGroup.Description>
                                                                 <RadioGroup.Label
