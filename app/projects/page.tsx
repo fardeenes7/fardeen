@@ -27,14 +27,11 @@ export default async function ProjectsPage() {
     //     );
     const featured = allProjects.find((project) => project.slug === "unidemy")!;
     const top2 = allProjects.find((project) => project.slug === "pricee")!;
-    const top3 = allProjects.find((project) => project.slug === "illiyn")!;
     const sorted = allProjects
         .filter((p) => p.published)
         .filter(
             (project) =>
-                project.slug !== featured.slug &&
-                project.slug !== top2.slug &&
-                project.slug !== top3.slug
+                project.slug !== featured.slug && project.slug !== top2.slug
         )
         .sort(
             (a, b) =>

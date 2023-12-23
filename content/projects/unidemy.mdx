@@ -1,27 +1,32 @@
 ---
 title: Unidemy 🔨
 
-description: Unkey is an open source API Key management solution. It allows you to create, manage and validate API Keys for your users. It’s built with security and speed in mind.
+description: Unidemy is a startup dedicated to computer science students containing all the resources they need to learn and practice programming.
 date: "2023-12-02"
-url: https://unidemy.dev
+url: https://unidemy.tech
 published: true
 repository: fardeenes7/unidemy
 image: "/images/projects/unidemy/1.jpg"
 ---
 
-[![](https://unkey.dev/images/landing/app.png)](https://unidemy.dev)
+[![](/images/projects/unidemy/0.jpg)](https://unidemy.tech)
 
 ## Description
 
 ## Features
+- **Dummy NID API:** Created a national ID database and api to be used for academic purposes.
+- **Learning Management System:** Working on an in-house learning management system powered by Next.js app router, Next.js server actions ,Youtube API and many more.
+- **Dummy Payment Gateway API:** Working on a payment gateway for academic usage.
 
 
 ## Tech Stack
 
 | Server | Client | Database |
 | --- | --- | -- |
-| Python | Django Templates | SQLite |
-| Django | Tailwind CSS | - |
+| NextJS 13 | Next JS | MySQL |
+| Typescript | Typescript | Prisma ORM |
+| Next Auth | Tailwind CSS | - |
+
 
 
 ## Installation and Usage
@@ -29,36 +34,27 @@ image: "/images/projects/unidemy/1.jpg"
 1.  Clone the repository to your local machine:
 
     ```bash
-    git clone https://github.com/fardeenes7/healthpoint.git
+    git clone https://github.com/fardeenes7/unidemy.git
     ```
 
-2.  Create a virtual environment and activate it:
+2.  Prepare local environment variables:
 
+    ```bash
+    cp .env.example .env.local
+    ```
+
+3.  Install the dependencies:
+
+    ```bash
+    npm install
+    ```
+
+4.  Start the development server:
+
+    ```bash
+    npm run dev
+    ```
     
-    ```bash
-    python -m venv env
-    source env/bin/activate (Linux/Mac)
-    env\Scripts\activate (Windows)
-    ```
-
-3.  Install the required packages:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4.  Run the migrations:
-
-    ```bash
-    python manage.py migrate
-    ```
-
-5.  Start the development server:
-
-    ```bash
-    python manage.py runserver
-    ```
-
 ## Contributing
 
 If you would like to contribute to Pricee, please open a pull request or submit an issue on the GitHub repository.
