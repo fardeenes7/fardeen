@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { allProjects } from "contentlayer/generated";
 import { Mdx } from "@/app/components/mdx";
 import { Header } from "./header";
+import { Card } from "@/app/components/card";
 import "./mdx.css";
 import { ReportView } from "./view";
 

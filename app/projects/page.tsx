@@ -25,7 +25,7 @@ export default async function ProjectsPage() {
     //             new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
     //             new Date(a.date ?? Number.POSITIVE_INFINITY).getTime()
     //     );
-    const featured = allProjects.find((project) => project.slug === "unidemy")!;
+    const featured = allProjects.find((project) => project.slug === "dokan")!;
     const top2 = allProjects.find((project) => project.slug === "pricee")!;
     const sorted = allProjects
         .filter((p) => p.published)
