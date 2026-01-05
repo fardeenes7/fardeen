@@ -1,0 +1,282 @@
+[
+    {
+        "slug": "sociallypark",
+        "title": "SociallyPark",
+        "subtitle": "Social Media Automation Platform",
+        "role": "Backend-heavy Full-stack Engineer",
+        "duration": "2024",
+        "description": "Automated social media publishing, scheduling, and analytics platform",
+        "summaryPoints": [
+            "Multi-platform publishing",
+            "Scheduled & instant posts",
+            "Media processing (image/video)",
+            "Credit-based usage system"
+        ],
+        "techStack": [
+            "Django",
+            "Celery",
+            "PostgreSQL",
+            "Next.js",
+            "Redis",
+            "S3",
+            "Youtube Data API",
+            "Facebook Graph API"
+        ],
+        "problem": "Managing content across multiple social media platforms manually is time-consuming and error-prone for creators and businesses.",
+        "solution": "A unified platform to create, schedule, publish, and analyze posts across multiple social media channels from one dashboard.",
+        "keyFeatures": [
+            "Multi-platform post publishing",
+            "Post scheduling & retries",
+            "Image & video processing",
+            "Usage tracking with credits"
+        ],
+        "architecture": {
+            "backend": ["Django", "Celery", "Redis"],
+            "frontend": ["Next.js", "TypeScript", "Tailwind"],
+            "infrastructure": ["S3-compatible storage", "Background workers"]
+        },
+        "technicalChallenges": [
+            "Handling async publishing workflows",
+            "Media processing at scale",
+            "Reliable retry & failure handling",
+            "Credit usage tracking"
+        ],
+        "outcome": [
+            "Robust publishing pipeline",
+            "Scalable background task architecture",
+            "Extensible platform design"
+        ],
+        "featured": true
+    },
+    {
+        "slug": "mahajon",
+        "title": "Mahajon",
+        "subtitle": "Inventory & Sales Management SaaS",
+        "role": "Full-stack Engineer",
+        "duration": "2024 – Present",
+        "description": "Inventory, orders & accounting platform for Facebook sellers",
+        "summaryPoints": [
+            "Multi-store architecture",
+            "Role-based access control",
+            "Product variants & order history",
+            "Accounting & reporting"
+        ],
+        "techStack": ["Django", "DRF", "Next.js", "PostgreSQL"],
+        "problem": "Small Facebook-based sellers manage inventory and orders using Excel or notebooks, leading to stock mismatch, lost customer history, and accounting errors.",
+        "solution": "A centralized SaaS platform to manage products, variants, orders, customers, and accounting with multi-user access per store.",
+        "keyFeatures": [
+            "Multi-store support",
+            "Role-based access control",
+            "Product variants (color, size, etc.)",
+            "Order & customer history",
+            "Accounting & reports"
+        ],
+        "architecture": {
+            "backend": ["Django + DRF", "PostgreSQL", "Celery"],
+            "frontend": [
+                "Next.js (App Router)",
+                "TypeScript",
+                "Tailwind + shadcn"
+            ],
+            "infrastructure": ["DigitalOcean", "Cloudflare"]
+        },
+        "technicalChallenges": [
+            "Designing flexible product variant system",
+            "Supporting multiple users per store",
+            "Ensuring accounting consistency",
+            "Scalable API design"
+        ],
+        "outcome": [
+            "Production-ready SaaS architecture",
+            "Designed for scale and extensibility",
+            "Aligned with real business workflows"
+        ],
+        "featured": true
+    },
+
+    {
+        "slug": "dfcl-erp",
+        "title": "DFCL ERP",
+        "subtitle": "Service & Repair ERP System",
+        "role": "Software Engineer",
+        "duration": "2024",
+        "description": "ERP system for managing service orders, workforce, and operations",
+        "summaryPoints": [
+            "Order dispatch & tracking",
+            "Workforce management",
+            "Wallet-based assignment system",
+            "Multi-dashboard architecture"
+        ],
+        "techStack": ["Django", "DRF", "Next.js", "PostgreSQL"],
+        "problem": "Manual and fragmented systems made it difficult to manage service orders, technicians, and payments efficiently.",
+        "solution": "A centralized ERP system to manage orders, technicians, balances, and dashboards for different roles.",
+        "keyFeatures": [
+            "Order lifecycle management",
+            "Technician assignment & tracking",
+            "Wallet and balance logic",
+            "Role-based dashboards"
+        ],
+        "architecture": {
+            "backend": ["Django + DRF", "PostgreSQL"],
+            "frontend": ["Next.js", "React"],
+            "infrastructure": ["DigitalOcean"]
+        },
+        "technicalChallenges": [
+            "Designing wallet-based workflows",
+            "Managing multiple user roles",
+            "Ensuring transactional integrity"
+        ],
+        "outcome": [
+            "Operational ERP system",
+            "Improved order tracking & control",
+            "Foundation for future expansion"
+        ],
+        "featured": true
+    },
+    {
+        "slug": "pixelgraphics-hrm",
+        "title": "PixelGraphics HRM & Accounting",
+        "subtitle": "Internal HR & Finance System",
+        "role": "Backend Engineer",
+        "duration": "2025",
+        "description": "Accounting and HRM system for internal business operations",
+        "summaryPoints": [
+            "Employee management",
+            "Attendance & payroll",
+            "Expense tracking",
+            "Financial reporting"
+        ],
+        "techStack": ["Django", "PostgreSQL"],
+        "problem": "Manual HR and accounting processes caused inefficiencies and reporting inconsistencies.",
+        "solution": "A centralized HRM and accounting system tailored to internal operational needs.",
+        "keyFeatures": [
+            "Employee & role management",
+            "Attendance tracking",
+            "Payroll calculations",
+            "Accounting reports"
+        ],
+        "architecture": {
+            "backend": ["Django", "PostgreSQL"],
+            "frontend": ["Server-rendered Django templates"],
+            "infrastructure": ["Single VPS deployment"]
+        },
+        "technicalChallenges": [
+            "Accurate payroll calculations",
+            "Handling HR edge cases",
+            "Reliable financial reporting"
+        ],
+        "outcome": [
+            "Streamlined internal operations",
+            "Improved reporting accuracy"
+        ],
+        "featured": false
+    },
+    {
+        "slug": "attendance-system",
+        "title": "Attendance System",
+        "subtitle": "Device-integrated Attendance Platform",
+        "role": "System Engineer",
+        "duration": "2025",
+        "description": "Attendance system with automatic and manual attendance support",
+        "summaryPoints": [
+            "Device-based attendance",
+            "Manual override support",
+            "Real-time syncing",
+            "Audit-friendly records"
+        ],
+        "techStack": ["Django", "PostgreSQL"],
+        "problem": "Organizations needed a reliable way to track attendance across devices and manual entries.",
+        "solution": "An attendance platform integrating biometric devices with manual attendance workflows.",
+        "keyFeatures": [
+            "Automatic attendance via devices",
+            "Manual attendance fallback",
+            "Attendance logs & reports"
+        ],
+        "architecture": {
+            "backend": ["Django", "PostgreSQL"],
+            "frontend": ["Admin dashboards"],
+            "infrastructure": ["On-premise / VPS"]
+        },
+        "technicalChallenges": [
+            "Device communication reliability",
+            "Data synchronization",
+            "Preventing duplicate records"
+        ],
+        "outcome": [
+            "Accurate attendance tracking",
+            "Flexible attendance workflows"
+        ],
+        "featured": false
+    },
+    {
+        "slug": "portfolio-cms",
+        "title": "Portfolio CMS SaaS",
+        "subtitle": "Multi-tenant Portfolio Platform",
+        "role": "Full-stack Engineer",
+        "duration": "2024",
+        "description": "SaaS platform allowing users to build portfolios on subdomains",
+        "summaryPoints": [
+            "Multi-tenant architecture",
+            "Subdomain-based sites",
+            "Custom themes",
+            "User dashboards"
+        ],
+        "techStack": ["Django", "DRF", "Next.js", "PostgreSQL"],
+        "problem": "Professionals needed an easy way to create and manage portfolio websites without custom development.",
+        "solution": "A multi-tenant SaaS platform that generates portfolio sites on subdomains with a central dashboard.",
+        "keyFeatures": [
+            "Subdomain provisioning",
+            "Theme-based portfolios",
+            "Centralized content management"
+        ],
+        "architecture": {
+            "backend": ["Django + DRF"],
+            "frontend": ["Next.js"],
+            "infrastructure": ["Cloud hosting", "DNS automation"]
+        },
+        "technicalChallenges": [
+            "Multi-tenant isolation",
+            "Subdomain routing",
+            "Scalable content delivery"
+        ],
+        "outcome": ["Reusable SaaS foundation", "Scalable multi-tenant design"],
+        "featured": false
+    },
+    {
+        "slug": "bus-ticketing",
+        "title": "Bus Ticketing Platform",
+        "subtitle": "Commission-based Ticket Sales System",
+        "role": "System Designer",
+        "duration": "Concept & Planning",
+        "description": "Platform for bus companies and agents to sell tickets digitally",
+        "summaryPoints": [
+            "Direct & agent-based sales",
+            "Commission handling",
+            "Seat & route management",
+            "Customer bookings"
+        ],
+        "techStack": ["Django", "PostgreSQL", "Next.js"],
+        "problem": "Bus operators relied on fragmented and manual ticketing processes with limited digital reach.",
+        "solution": "A centralized ticketing system allowing operators and agents to sell tickets with automated commission handling.",
+        "keyFeatures": [
+            "Route & seat management",
+            "Online ticket booking",
+            "Commission-based sales"
+        ],
+        "architecture": {
+            "backend": ["Django"],
+            "frontend": ["Next.js"],
+            "infrastructure": ["Cloud hosting"]
+        },
+        "technicalChallenges": [
+            "Seat locking & concurrency",
+            "Commission calculations",
+            "Transactional integrity"
+        ],
+        "outcome": [
+            "Well-defined system architecture",
+            "Ready for future implementation"
+        ],
+        "featured": false
+    }
+]

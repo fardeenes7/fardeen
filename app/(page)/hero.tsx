@@ -1,67 +1,68 @@
 import Link from "next/link";
-import { IconSparkles, IconArrowRight } from "@tabler/icons-react";
+import { IconArrowRight } from "@tabler/icons-react";
 import { AnimatedNoise } from "@/components/animated-noise";
+import Image from "next/image";
 
 export default function HeroSection() {
     return (
-        <section className="flex flex-col justify-center px-6 pt-24- pb-20- py-40 relative">
-            <AnimatedNoise opacity={0.5} />
+        <section className="flex flex-col justify-center py-60 relative overflow-hidden">
+            <AnimatedNoise opacity={0.3} />
 
-            {/* Content */}
-            <div className="relative z-10 text-start">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border mb-8 shadow-sm">
-                    <IconSparkles className="w-4 h-4 text-muted-foreground" />
-                    <span className="text-sm text-muted-foreground">
-                        Open to work
-                    </span>
+            <div className="relative z-10">
+                <div className="mb-6">
+                    <Image
+                        src="/fardeen.jpg"
+                        width={100}
+                        height={100}
+                        className="rounded-full overflow-hidden"
+                        alt="Fardeen"
+                    />
                 </div>
-
-                <h1 className="font-display text-4xl md:text-5xl font-bold tracking-tight mb-2">
-                    <span className="text-foreground ">Hi, I am </span>
-                    <span className="bg-linear-to-r from-primary via-primary/70 to-primary bg-clip-text text-transparent">
-                        fardiin.
-                    </span>
+                <h1 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-3">
+                    Fardeen Ehsan
                 </h1>
-                <h2 className="mb-6">Software Engineer — SaaS & Systems</h2>
+                <h2 className="text-xl md:text-2xl font-medium text-muted-foreground mb-6">
+                    Software Engineer — SaaS & System Architecture
+                </h2>
 
-                <p className="md:text-lg text-muted-foreground max-w-2xl mb-10 leading-relaxed text-balance">
-                    I build scalable products using Django, DRF, Next.js, and
-                    cloud infrastructure.
+                <p className="text-base md:text-lg text-muted-foreground max-w-2xl mb-10 leading-relaxed">
+                    I build scalable, backend-heavy SaaS products using{" "}
+                    <br className="hidden md:block" />
+                    <span className="text-foreground font-semibold">
+                        Django, DRF, Next.js, and cloud-native infrastructure.
+                    </span>
                 </p>
 
-                <div className="mb-8">
-                    <h3 className="font-bold text-lg mb-3">Tech Stack</h3>
-                    <div className="flex flex-wrap gap-2">
-                        {[
-                            "Python",
-                            "Django",
-                            "DRF",
-                            "Next.js",
-                            "TypeScript",
-                            "PostgreSQL",
-                            "Docker",
-                            "Kubernetes",
-                            "AWS",
-                            "GCP",
-                        ].map((tech) => (
-                            <span
-                                key={tech}
-                                className="px-3 py-1 rounded-full bg-muted text-muted-foreground text-sm font-medium"
-                            >
-                                {tech}
-                            </span>
-                        ))}
-                    </div>
-                </div>
-
-                <div className="flex flex-col sm:flex-row items-center gap-4">
+                <div className="flex flex-col sm:flex-row items-center gap-4 mb-12">
                     <Link
                         href="/projects"
-                        className="group flex items-center gap-2 py-3 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                        className="w-full sm:w-auto px-6 py-3 bg-primary text-primary-foreground rounded-full font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-2 text-sm"
                     >
-                        <span>See my recent works</span>
-                        <IconArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                        View Projects
+                        <IconArrowRight className="w-4 h-4" />
                     </Link>
+                    <Link
+                        href="/contact"
+                        className="w-full sm:w-auto px-6 py-3 bg-transparent border border-border rounded-full font-semibold hover:bg-muted transition-colors flex items-center justify-center text-sm"
+                    >
+                        Contact
+                    </Link>
+                </div>
+
+                <div className="flex flex-wrap gap-x-6 gap-y-3 items-center">
+                    <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm font-medium text-muted-foreground">
+                        <span>Django</span>
+                        <span className="text-border">•</span>
+                        <span>FastAPI</span>
+                        <span className="text-border">•</span>
+                        <span>Next.js</span>
+                        <span className="text-border">•</span>
+                        <span>PostgreSQL</span>
+                        <span className="text-border">•</span>
+                        <span>Docker</span>
+                        <span className="text-border">•</span>
+                        <span>Cloudflare</span>
+                    </div>
                 </div>
             </div>
         </section>

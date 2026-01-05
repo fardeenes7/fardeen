@@ -1,0 +1,34 @@
+[
+    {
+        "slug": "designing-multi-tenant-saas-django",
+        "title": "Designing Multi-tenant SaaS with Django",
+        "excerpt": "A deep dive into different multi-tenancy strategies in Django, from shared databases to isolated schemas.",
+        "date": "2026-01-05",
+        "content": "Building a multi-tenant SaaS requires careful planning of how data is isolated between customers. In Django, there are three main approaches:\n\n### 1. Shared Database, Shared Schema\nThis is the simplest approach where every table has a `tenant_id` column. It's easy to set up but requires strict filtering in every query to prevent data leaks.\n\n### 2. Shared Database, Isolated Schemas (PostgreSQL)\nUsing PostgreSQL schemas allows you to have separate namespaces for each tenant within the same database. This provides better isolation and easier migrations but adds complexity to the connection handling.\n\n### 3. Isolated Databases\nThe most secure but also the most expensive and complex to manage. Each tenant gets their own database instance.\n\nFor most startups, the **Shared Database, Shared Schema** approach with a robust middleware for filtering is the best balance of speed and scalability.",
+        "tags": ["Django", "SaaS", "Architecture"]
+    },
+    {
+        "slug": "celery-task-orchestration-production",
+        "title": "Celery Task Orchestration in Production",
+        "excerpt": "How to manage complex background jobs, retries, and monitoring in a high-traffic environment.",
+        "date": "2025-12-28",
+        "content": "Celery is a powerful tool, but it can easily become a bottleneck if not configured correctly. Here are my top lessons for running Celery in production:\n\n### 1. Use Multiple Queues\nDon't let long-running tasks block critical, fast tasks. Separate your work into `default`, `high-priority`, and `bulk` queues.\n\n### 2. Implement Robust Retries\nNetwork failures happen. Use exponential backoff for retries to avoid overwhelming your services when they come back online.\n\n### 3. Monitor with Flower\nVisibility is key. Use Flower to monitor task progress, success rates, and worker health in real-time.",
+        "tags": ["Celery", "Python", "DevOps"]
+    },
+    {
+        "slug": "scaling-nextjs-dashboards",
+        "title": "Scaling Next.js Dashboards",
+        "excerpt": "Optimizing performance and user experience in data-heavy administrative interfaces.",
+        "date": "2025-12-10",
+        "content": "Dashboards often become slow as the amount of data grows. Here's how I keep Next.js dashboards snappy:\n\n### 1. Server Components for Initial Load\nLeverage React Server Components to fetch data on the server and reduce the amount of JavaScript sent to the client.\n\n### 2. Optimistic Updates\nUse SWR or React Query to implement optimistic updates, making the UI feel instantaneous even when the backend is still processing.\n\n### 3. Virtualization for Large Lists\nWhen displaying thousands of rows, use windowing/virtualization to only render what's visible on the screen.",
+        "tags": ["Next.js", "React", "Frontend"]
+    },
+    {
+        "slug": "lessons-rebuilding-erp-alone",
+        "title": "Lessons from Rebuilding an ERP Alone",
+        "excerpt": "The technical and personal challenges of migrating a legacy system to a modern stack single-handedly.",
+        "date": "2025-11-15",
+        "content": "Rebuilding an ERP from scratch is a daunting task, especially as a solo developer. Here's what I learned during the DFCL ERP migration:\n\n### 1. Data Migration is 50% of the Work\nDon't underestimate the effort required to clean and move legacy data. Write scripts, test them repeatedly, and have a rollback plan.\n\n### 2. Build a Central API First\nBy focusing on a robust DRF API first, I was able to build multiple specialized dashboards (Admin, Technician, Customer) without duplicating logic.\n\n### 3. Automate Your Deployments\nWhen you're the only one on call, you need to trust your deployment process. Docker and CI/CD pipelines were lifesavers.",
+        "tags": ["ERP", "Migration", "Solo Developer"]
+    }
+]
