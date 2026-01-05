@@ -16,6 +16,7 @@ export default function HeroSection() {
                         height={100}
                         className="rounded-full overflow-hidden"
                         alt="Fardeen"
+                        priority
                     />
                 </div>
                 <h1 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-3">
